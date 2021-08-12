@@ -1,0 +1,89 @@
+//@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$background: #3b3f41;
+$colors: (
+        "gray-normal": #55595a,
+        "gray-bright": #83898b,
+        "gray-light": #a1a5a7,
+        "gray-softlight": #56595a,
+        "blue-light": #94b2d6,
+        "gray-darklight": #636869,
+        "gray-tlight": #969d9e,
+);
+
+body {
+  background: $background;
+  //background-image: url("../public/backgroundimage.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color: $color;
+  }
+  .text-#{$name} {
+    color: $color;
+  }
+  .border-#{$name} {
+    border-color: $color;
+  }
+}
+
+.markdown {
+  h1 {
+    @apply text-xl font-semibold mb-1 text-yellow-300
+  }
+
+  h2 {
+    @apply text-lg font-semibold text-yellow-300
+  }
+
+  h3 {
+    @apply text-lg font-medium text-yellow-300
+  }
+
+  h4 {
+    @apply text-base font-normal text-yellow-300
+  }
+
+  p {
+    @apply text-sm mb-4 font-medium
+  }
+
+  p:last-child {
+     @apply text-sm mb-0 font-medium
+   }
+
+  blockquote {
+    @apply bg-gray-700 text-gray-300 my-1 py-1 px-1 rounded-none md:rounded-md
+  }
+
+  a {
+    @apply font-medium text-blue-400 hover:text-pink-500
+  }
+
+  img {
+    @apply rounded-md md:rounded-lg my-1 w-auto max-w-sm xl:max-w-4xl
+  }
+
+  ul {
+    @apply list-disc mx-5
+  }
+
+  ol {
+    @apply list-decimal mx-5
+  }
+}
